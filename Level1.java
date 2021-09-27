@@ -14,11 +14,12 @@ public class Level1 extends World
      */
     public Level1()
     {    
-        // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
+        
         super(1200, 800, 1, false); 
         prepare();
     }
-    
+    private final float GRAVITY = 0.0667f;
+    private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -34,6 +35,14 @@ public class Level1 extends World
         Gem gem = new Gem();
         addObject(gem,740,368);
         addObject(new Floor(), 600, 800);
-        addObject(new Player(), 43, 760);
+        addObject(new Bomb(GRAVITY), 450, 115);
+        addObject(new BrickWall(), 960, 100);
+        addObject(new BrickWall(), 380, 500);
+        addObject(new Player(), 50, 750);
+        addObject(new SmBrickWall(), 420, 160);
+        addObject(new BrickWall(), 1000, 600);
+        addObject(new Bomb(GRAVITY), 1050, 765);
+        addObject(new SmBrickWall(), 60, 400);
+        addObject(new SmBrickWall(), 220, 200);
     }
 }

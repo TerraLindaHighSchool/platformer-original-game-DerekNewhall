@@ -12,8 +12,16 @@ public class Rock extends Obstacle
      * Act - do whatever the Rock wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act()
+    private float yVelocity;
+    private final float GRAVITY;
+
+    public Rock(float gravity)
     {
-        // Add your action code here.
+        GRAVITY = gravity;
+    }
+
+    protected void fall()
+    { 
+
     }
 }
