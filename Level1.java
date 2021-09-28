@@ -18,6 +18,11 @@ public class Level1 extends World
         super(1200, 800, 1, false); 
         prepare();
     }
+    
+    public void act()
+    {
+        spawn();
+    }
     private final float GRAVITY = 0.0667f;
     private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
     /**
@@ -44,5 +49,18 @@ public class Level1 extends World
         addObject(new Bomb(GRAVITY), 1050, 765);
         addObject(new SmBrickWall(), 60, 400);
         addObject(new SmBrickWall(), 220, 200);
+    }
+    
+    public void spawn()
+    {
+        if(Math.random() < 0.025)
+        {
+            addObject(new Rock(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
+        }
+        
+        if(Math.random() < 0.01)
+        {
+            addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
+        }
     }
 }
