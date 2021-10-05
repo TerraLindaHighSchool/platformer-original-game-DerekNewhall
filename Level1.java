@@ -43,7 +43,7 @@ public class Level1 extends World
         addObject(new Bomb(GRAVITY), 450, 115);
         addObject(new BrickWall(), 960, 100);
         addObject(new BrickWall(), 380, 500);
-        addObject(new Player(), 50, 750);
+        addObject(new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, MUSIC), 50, 750);
         addObject(new SmBrickWall(), 420, 160);
         addObject(new BrickWall(), 1000, 600);
         addObject(new Bomb(GRAVITY), 1050, 765);
