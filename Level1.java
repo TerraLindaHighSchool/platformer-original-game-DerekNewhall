@@ -30,6 +30,7 @@ public class Level1 extends World
     {
         spawn();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -41,21 +42,20 @@ public class Level1 extends World
         Door door = new Door();
         addObject(door,455,43);
         door.setLocation(608,51);
-        door.setLocation(1178,35);
+        door.setLocation(1178,185);
         Gem gem = new Gem();
         addObject(gem,740,368);
         addObject(new Floor(), 600, 800);
-        addObject(new Bomb(GRAVITY), 450, 115);
-        addObject(new BrickWall(), 960, 100);
-        addObject(new BrickWall(), 380, 500);
-        addObject(new Player(3, 5.6f, GRAVITY, 3, 3, Level2.class, MUSIC), 50, 750);
-        addObject(new SmBrickWall(), 420, 160);
-        addObject(new BrickWall(), 1000, 600);
-        addObject(new Bomb(GRAVITY), 1050, 765);
-        addObject(new SmBrickWall(), 60, 400);
-        addObject(new SmBrickWall(), 220, 200);
-        Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, 
-                           MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
+        addObject(new Bomb(GRAVITY), 450, 265);
+        addObject(new BrickWall(), 960, 250);
+        addObject(new BrickWall(), 380, 650);
+        addObject(new SmBrickWall(), 420, 310);
+        addObject(new BrickWall(), 1000, 750);
+        addObject(new Bomb(GRAVITY), 1050, 715);
+        addObject(new SmBrickWall(), 60, 550);
+        addObject(new SmBrickWall(), 220, 425);
+        addObject(new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC), 70, 750);
+        
     }
     
     public void spawn()

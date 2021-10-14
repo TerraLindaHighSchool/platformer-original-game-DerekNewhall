@@ -34,6 +34,7 @@ public class Player extends Actor
         NEXT_LEVEL = nextLevel;
         MUSIC = music;
         health = new Health[maxHealth];
+        healthCount = maxHealth;
         
         STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[]
@@ -74,6 +75,7 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("right"))
         {
+            
             if(isFacingLeft)
             {
                 mirrorImages();
@@ -81,7 +83,7 @@ public class Player extends Actor
             isWalking = true;
             isFacingLeft = false;
             move(speed);
-            if(MUSIC.isPlaying())
+            if(!MUSIC.isPlaying())
             {
                 MUSIC.playLoop();
             }
@@ -109,7 +111,7 @@ public class Player extends Actor
         {
             yVelocity = JUMP_FORCE;
             isJumping = true;
-            Greenfoot.playSound("jump");
+            Greenfoot.playSound("jump.wav");
         }
         
         if(isJumping && yVelocity > 0)
@@ -132,6 +134,7 @@ public class Player extends Actor
     }
     private void animator() 
     {
+        
         if(frame % (15 - 2 * speed) == 0)
         {
             if(walkIndex < WALK_ANIMATION.length)
@@ -144,6 +147,7 @@ public class Player extends Actor
                 walkIndex = 0;
             }
         }
+        frame++;
     }
     private void onCollision() 
     {
@@ -167,7 +171,7 @@ public class Player extends Actor
         
         if(isTouching(Obstacle.class))
         {
-            Greenfoot.playSound("explosionSmall");
+            Greenfoot.playSound("explosionSmall.wav");
             removeTouching(Obstacle.class);
             getWorld().removeObject(health[healthCount - 1]);
             healthCount--;
