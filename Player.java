@@ -154,7 +154,7 @@ public class Player extends Actor
         if(isTouching(Door.class))
         {
             World world = null;
-            Greenfoot.playSound("door_open");
+            Greenfoot.playSound("door_open.wav");
             try
             {
                 world = (World) NEXT_LEVEL.newInstance();

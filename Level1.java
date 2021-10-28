@@ -55,7 +55,9 @@ public class Level1 extends World
         addObject(new SmBrickWall(), 60, 550);
         addObject(new SmBrickWall(), 220, 425);
         addObject(new Player(SPEED, JUMP_FORCE, GRAVITY, MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC), 70, 750);
-        
+
+        Toilet toilet = new Toilet();
+        addObject(toilet,33,752);
     }
     
     public void spawn()
